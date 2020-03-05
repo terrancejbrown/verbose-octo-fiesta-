@@ -18,7 +18,7 @@ public class FunkyBeaverServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		resp.getWriter().write("FUNKY BEAVER");
-		super.doGet(req, resp);
+		
 	}
  
 	
