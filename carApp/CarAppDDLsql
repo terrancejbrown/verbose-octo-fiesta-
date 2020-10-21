@@ -1,0 +1,107 @@
+--Always start fresh
+select 'drop table '||
+    table_name || ' cascade constraints;'
+    from user_tables;
+    
+drop table CAR cascade constraints;
+drop table UZER cascade constraints;
+drop table OFFER cascade constraints;
+    
+select 'drop sequence ' || sequence_name || ';' from user_sequences;
+
+drop sequence CAR_SEQ;
+drop sequence OFFER_SEQ;
+drop sequence UZER_SEQ;
+--build schemas
+
+  
+
+
+create table uzer (
+    id number(6) primary key,
+    username varchar2(25) unique,
+    pswd varchar2(25) not null, 
+    firstname varchar2(20) not null,
+    lastname varchar2(20) not null,
+    lvl varchar2(25)
+);  
+
+
+create table car (
+    id number(6) primary key,
+    cartype varchar2(25) not null,
+    carmodel varchar2(20) unique,
+    color varchar2(25) not null,
+    price number(5,2) not null check(price>=0), --999.99
+    ownerid number(6),
+    image varchar2(200), --may trash later, idk
+    constraint fk_car_owner foreign key (ownerid) 
+        references uzer(id)
+);    
+   
+create table offer (
+    id number(20) primary key,
+    student_id number (20),
+    offertotal number(7,2) default 0 check (offertotal >= 0),
+    carmodel varchar2(20),
+    downpayment number(7,2) default 0 check (downpayment >=0),
+    status varchar2(10),
+    constraint fk_offer_student 
+        foreign key (student_id) references uzer(id)
+);       
+
+
+create SEQUENCE uzer_seq nocache;
+create SEQUENCE car_seq nocache;
+create SEQUENCE offer_seq nocache;
+
+
+create or replace trigger uzer_pk_trig 
+before insert or update on uzer
+for each row
+begin
+    if INSERTING then
+        select uzer_seq.nextVal into :new.id from dual;
+    elsif UPDATING then
+        select :old.id into :new.id from dual;
+    end if;
+end;
+/
+
+create or replace trigger car_pk_trig 
+before insert or update on car
+for each row
+begin
+    if INSERTING then
+        select car_seq.nextVal into :new.id from dual;
+    elsif UPDATING then
+        select :old.id into :new.id from dual;
+    end if;
+end;
+/
+
+create or replace trigger offer_pk_trig 
+before insert or update on offer
+for each row
+begin
+    if INSERTING then
+        select offer_seq.nextVal into :new.id from dual;
+    elsif UPDATING then
+        select :old.id into :new.id from dual;
+    end if;
+end;
+/
+
+--Stored proc.
+create or replace procedure  accept_offers (offer_id_in in number)
+   as    
+begin
+     update offer set status = 'APPROVED' where id = offer_id_in;
+       
+    commit;
+exception
+    when others then
+        rollback;
+end;
+
+/

@@ -1,0 +1,40 @@
+
+--------------Cars
+--Base Cars
+
+insert into car(id, cartype, carmodel, color, price)
+    values(1, 'Military', 'Tank', 'Gunmetal', 12);
+		
+insert into car(id, cartype, carmodel, color, price)
+    values(1, 'Emergency', 'Fire Truck', 'Red' , 3);
+    
+insert into car(id, cartype, carmodel, color, price)
+    values(1, 'Supercar', 'Teslaghinarri', 'Chupacabra' , 30);
+
+    
+    
+----------------Users
+--Base Users
+
+insert into uzer(id, username, pswd, firstname, lastname)
+    values(1, 'nukeyd', 'pass', 'Nuke', 'Dukem');
+
+insert into uzer(id, username, pswd, firstname, lastname)
+    values(1,'vavinny', 'pass', 'V.A.', 'Vinny');
+
+insert into uzer(id, username, pswd, firstname, lastname, lvl)
+    values(1,'ternce', 'ternce','Ternce', 'Brown', 'EMPLOYEE');    
+
+insert into uzer(id, username, pswd, firstname, lastname, lvl)
+    values(1, 'richgold', '$$$$$$' ,'Richard', 'Oro', 'MANAGER');
+--offers
+
+insert into offer(id, student_id, carmodel, offertotal, downpayment, status)
+    values(1, 1,'Tank', 10, 2, 'PENDING');
+    
+insert into offer(id, student_id, carmodel, offertotal, downpayment, status)
+    values(1, 2, 'Tank', 13, 3, 'PENDING'); 
+
+--rollback;
+commit;
+
