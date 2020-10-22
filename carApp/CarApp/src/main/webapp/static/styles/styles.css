@@ -1,0 +1,110 @@
+#navbar{
+   background-color: #8092A4 ;
+   text-justify: auto;
+   font-family: Arial, Helvetica, sans-serif;
+   color:  #ffcc00;
+}
+#logindisplay{
+    display: block;
+    margin: 0px auto;
+    width: 75%;
+  
+}
+#loadinggif{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+div>{
+    border-style: solid;
+    border-width: thin;
+    border-color: #ffcc00;
+}
+#formdiv{
+    max-width: 50%;
+    background-color: #ffcc00;
+    padding: 15px;
+    padding-right: 50px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #9a190b;
+    margin: 20px auto;
+
+}
+input {
+    justify-content: right;
+    float: right;
+    clear: both;
+    width: 250px;
+}
+#formblurbdiv{
+    max-width: 50%;
+    background-color: #ffcc00;
+    padding: 15px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #9a190b;
+    margin: 20px auto;
+  
+}
+
+#aboutdiv{
+    max-width: 50%;
+    background-color: #ffcc00;
+    padding: 15px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #9a190b;
+    margin: 20px auto;
+   
+}
+#viewreqdiv{
+    max-width: 75%;
+    background-color: #ffcc00;
+    padding: 15px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #9a190b;
+    margin: 20px auto;
+}
+#viewappdiv{
+    max-width: 75%;
+    background-color: #ffcc00;
+    padding: 15px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #9a190b;
+    margin: 20px auto;
+}
+#viewcommdiv{
+    max-width: 75%;
+    background-color: #ffcc00;
+    padding: 15px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #9a190b;
+    margin: 20px auto;
+}
+
+#commentdiv{
+    max-width: 50%;
+    background-color: #ffcc00;
+    padding: 15px;
+    padding-right: 50px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #9a190b;
+    margin: 20px auto;
+}
+
+#editformdiv{
+    max-width: 50%;
+    background-color: #ffcc00;
+    padding: 15px;
+    padding-right: 50px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #9a190b;
+    margin: 20px auto;
+}
