@@ -14,15 +14,15 @@ public class LoginServiceImp implements LoginService {
 	private LoginDAO ld = new LoginImp();
 	
 	@Override
-	public Login getEmployee(String username, String password) {
+	public Login getUser(String username, String password) {
 		Login login = new Login (username, password);
 //		login = ld.getUser(login);
 		Login emp = ld.getUser(login);
-		emp = ld.getEmployee(emp);
+		emp = ld.getUser(emp);
 		
 		if(emp.getId()==0)
 		{
-			log.trace("No employee found");
+			log.trace("No user found");
 			return null;
 		}
 		if(emp.getSup()!=null)
